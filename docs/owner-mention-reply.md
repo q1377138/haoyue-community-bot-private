@@ -32,6 +32,8 @@ Examples:
 - `ani5vmvdqm`: keep the existing automatic game/welfare/menu/service keyword replies.
 - `amlc1bekzi`: do not auto-reply normally; reply only when explicitly mentioned.
 - Both rooms: explicit `@q13771388` is allowed.
+- Both rooms: replying to a prior `皓悦小助手` support answer also continues the support conversation, even when the follow-up message does not repeat `@q13771388`.
+- Replies to game/activity cards are not treated as support threads.
 
 ## Production Hotfix
 
@@ -63,3 +65,10 @@ Production user-facing hotfix on 2026-07-06:
 
 - Backup: `/opt/haoyue-community-bot/src/bot.mjs.bak-user-facing-helper-*`
 - Changed `centralRagCard()` and `knowledgeGuide()` so external replies no longer show `皓悦知识库 · 检索结果`.
+
+Production reply-thread hotfix on 2026-07-06:
+
+- Backup: `/opt/haoyue-community-bot/src/bot.mjs.bak-reply-thread-*`
+- Tracks support-message IDs in `state.supportThreadMessageIds`.
+- If a user replies to a `皓悦小助手` support answer, the bot treats the new message as a follow-up support question.
+- Short greetings such as `@q13771388 在` now answer with a natural `在的，你直接说问题就行。` support prompt.
