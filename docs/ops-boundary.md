@@ -3,6 +3,7 @@
 ## The Bot May Do
 
 - Send TG service group links.
+- Reply with the fixed owner-mention service phrase when a message contains `@q13771388`.
 - Generate weekly welfare eligibility previews.
 - Generate ranking announcement drafts.
 - Check binding status from approved read-only sources.

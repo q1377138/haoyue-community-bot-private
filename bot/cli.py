@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 from bot.services.knowledge import search_knowledge
+from bot.services.mention_reply import owner_mention_reply
 from bot.services.rooms import daily_summary_schedule
 from bot.services.tg_links import service_group_button
 from bot.services.weekly_welfare import evaluate_weekly_welfare
@@ -32,6 +33,8 @@ def main() -> int:
     knowledge = sub.add_parser("knowledge-search", help="Search local public knowledge mirror.")
     knowledge.add_argument("query")
     knowledge.add_argument("--dir", default="docs/knowledge")
+    mention = sub.add_parser("mention-reply", help="Preview fixed owner mention reply.")
+    mention.add_argument("text")
 
     args = parser.parse_args()
     if args.command == "weekly-preview":
@@ -48,6 +51,9 @@ def main() -> int:
     if args.command == "knowledge-search":
         hits = search_knowledge(args.query, Path(args.dir))
         print(json.dumps([hit.__dict__ for hit in hits], ensure_ascii=False))
+        return 0
+    if args.command == "mention-reply":
+        print(json.dumps({"reply": owner_mention_reply(args.text)}, ensure_ascii=False))
         return 0
     return 2
 

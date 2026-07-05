@@ -2,6 +2,8 @@ from __future__ import annotations
 
 TG_SERVICE_GROUP_LABEL = "社区服务群"
 TG_SERVICE_GROUP_URL = "https://t.me/+s485tyl24600YzAx"
+OWNER_MENTION_NAME = "@q13771388"
+OWNER_MENTION_REPLY = "皓悦 API 竭诚为您服务"
 
 BOT_DEVELOPMENT_RULES_URL = "https://dc.hhhl.cc/settings/connect"
 PRIMARY_COMMUNITY_ROOM_ID = "ani5vmvdqm"
