@@ -16,7 +16,9 @@ the bot replies with:
 皓悦 API 竭诚为您服务
 ```
 
-When the message contains `@q13771388` plus a question, the production bot should query the knowledge base and answer from public/support-safe hits.
+When the message contains `@q13771388` plus a question, the production bot may query the knowledge base internally, but the group-facing reply must look like a normal support answer from `皓悦小助手`.
+
+Do not expose implementation wording such as `知识库`, `检索结果`, score, file names, paths, or hit lists in the group reply.
 
 Examples:
 
@@ -52,6 +54,12 @@ and checks this before the headquarters-room no-auto-reply guard, so a direct ow
 Updated on 2026-07-06:
 
 - mention with question uses central RAG through the SSH tunnel at local `127.0.0.1:18080`
-- RAG results are filtered to public/support-safe paths before being sent to the group
+- RAG results are filtered to public/support-safe paths before being used
+- group-facing answers use the title `皓悦小助手` and direct support wording only
+- common short questions such as `我要key`, `403`, `401`, `429`, and `502/504` use fixed customer-support style answers first
 - empty mention still returns the fixed sentence
 
+Production user-facing hotfix on 2026-07-06:
+
+- Backup: `/opt/haoyue-community-bot/src/bot.mjs.bak-user-facing-helper-*`
+- Changed `centralRagCard()` and `knowledgeGuide()` so external replies no longer show `皓悦知识库 · 检索结果`.
