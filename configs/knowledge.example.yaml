@@ -1,0 +1,26 @@
+knowledge:
+  mode: "local_mirror"
+  local_dir: "docs/knowledge"
+  public_only: true
+  triggers:
+    - "知识库"
+    - "帮助中心"
+    - "查教程"
+    - "查FAQ"
+    - "查报错"
+
+central_rag:
+  host: "216.195.211.69"
+  local_url_on_rag_server: "http://127.0.0.1:18080"
+  public_network_access: false
+  note: "Do not expose central RAG directly. Use public mirror or approved token/allowlist endpoint."
+
+daily_learning:
+  schedule: "0 3 * * *"
+  timezone: "Asia/Shanghai"
+  rooms:
+    - "ani5vmvdqm"
+    - "amlc1bekzi"
+  output:
+    summary_md: "docs/knowledge/09-community-learn-summary.md"
+

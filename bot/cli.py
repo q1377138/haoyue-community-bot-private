@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import argparse
 import json
+from pathlib import Path
 
+from bot.services.knowledge import search_knowledge
 from bot.services.rooms import daily_summary_schedule
 from bot.services.tg_links import service_group_button
 from bot.services.weekly_welfare import evaluate_weekly_welfare
@@ -27,6 +29,9 @@ def main() -> int:
 
     sub.add_parser("service-group-button", help="Show canonical TG service group button.")
     sub.add_parser("daily-summary-schedule", help="Show canonical daily community summary schedule.")
+    knowledge = sub.add_parser("knowledge-search", help="Search local public knowledge mirror.")
+    knowledge.add_argument("query")
+    knowledge.add_argument("--dir", default="docs/knowledge")
 
     args = parser.parse_args()
     if args.command == "weekly-preview":
@@ -39,6 +44,10 @@ def main() -> int:
         return 0
     if args.command == "daily-summary-schedule":
         print(json.dumps(daily_summary_schedule(), ensure_ascii=False))
+        return 0
+    if args.command == "knowledge-search":
+        hits = search_knowledge(args.query, Path(args.dir))
+        print(json.dumps([hit.__dict__ for hit in hits], ensure_ascii=False))
         return 0
     return 2
 
