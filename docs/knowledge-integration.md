@@ -46,11 +46,20 @@ two community rooms at 03:00
 
 ## Direct RAG Access Requirement
 
-If later live central RAG query is required, use one of these approved designs:
+Live central RAG query is now implemented through SSH tunnel for the community bot:
+
+```text
+43 community bot
+  -> http://127.0.0.1:18080
+  -> haoyue-rag-tunnel.service
+  -> ssh -L
+  -> 216 RAG 127.0.0.1:18080
+```
+
+If another service later needs live central RAG query, use one of these approved designs:
 
 - HTTPS endpoint on RAG server with token auth and firewall allowlist only for `43.155.168.147`.
 - SSH tunnel with a restricted key and read-only `/search` access.
 - Reverse proxy sidecar that exposes only `public` documents.
 
 Do not expose raw `/search` publicly without owner approval.
-

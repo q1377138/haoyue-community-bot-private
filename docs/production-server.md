@@ -19,8 +19,8 @@ Read-only check on 2026-07-05:
 - Image: `node:24-alpine`.
 - Compose timezone: `Asia/Shanghai`.
 - Existing npm scripts include `live`, `weekly-benefit-report`, `weekly-payout-plan`, `community-learn-report`, `knowledge-sync`, and `weekly-cycle-report`.
+- RAG SSH tunnel service `haoyue-rag-tunnel.service` was added on 2026-07-06. It maps local `127.0.0.1:18080` on this server to central RAG `216.195.211.69:127.0.0.1:18080` through a restricted SSH key.
 
 ## Deployment Boundary
 
 Do not overwrite production files from this repository until the existing Node bot source has been safely imported or a migration plan is approved.
-
