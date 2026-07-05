@@ -1,0 +1,17 @@
+# Example only. Copy to a server-local config path and fill real values there.
+telegram:
+  bot_token_env: "HAOYUE_TG_BOT_TOKEN"
+  service_group_label: "TG服务群"
+  service_group_url: "https://t.me/+s485tyl24600YzAx"
+
+weekly_welfare:
+  enabled: true
+  minimum_balance: 10
+  reward_balance: 2
+  require_community_binding: true
+  schedule_note: "周日15点发放"
+
+safety:
+  dry_run_default: true
+  require_owner_approval_for_balance_changes: true
+

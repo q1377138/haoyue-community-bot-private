@@ -1,0 +1,10 @@
+[project]
+name = "haoyue-community-bot"
+version = "0.1.0"
+description = "Private Telegram/community bot utilities for Haoyue operations."
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+haoyue-community-bot = "bot.cli:main"
+

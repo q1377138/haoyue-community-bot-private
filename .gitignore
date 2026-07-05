@@ -1,0 +1,24 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Runtime state and private production data.
+data/
+runtime/
+logs/
+*.sqlite
+*.sqlite3
+*.db
+*.log
+*.jsonl
+
+# Secrets and local deployment configs.
+.env
+.env.*
+*.pem
+*.key
+secrets/
+credentials/
+tokens/
+
