@@ -72,3 +72,11 @@ Production reply-thread hotfix on 2026-07-06:
 - Tracks support-message IDs in `state.supportThreadMessageIds`.
 - If a user replies to a `皓悦小助手` support answer, the bot treats the new message as a follow-up support question.
 - Short greetings such as `@q13771388 在` now answer with a natural `在的，你直接说问题就行。` support prompt.
+
+Production multi-room hotfix on 2026-07-06:
+
+- Backup: `/opt/haoyue-community-bot/src/bot.mjs.bak-multiroom-*` and `src/bot.mjs.bak-multiroom-mentionid-*`.
+- The live bot now connects to both `ani5vmvdqm` and `amlc1bekzi` instead of only `config.roomId`.
+- Replies are sent back to the triggering message's `toRoomId`, not always the default room.
+- Headquarters room still blocks normal automatic replies; it only handles owner mentions or support reply threads.
+- Owner mention detection checks both literal `@q13771388` text and `mentionedUserIds` containing the bot account id.
