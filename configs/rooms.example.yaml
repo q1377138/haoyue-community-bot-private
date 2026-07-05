@@ -1,0 +1,17 @@
+rooms:
+  primary:
+    id: "ani5vmvdqm"
+    url: "https://dc.hhhl.cc/chat/room/ani5vmvdqm"
+    purpose: "main served community room"
+  daily_summary:
+    schedule: "0 3 * * *"
+    timezone: "Asia/Shanghai"
+    targets:
+      - id: "ani5vmvdqm"
+        url: "https://dc.hhhl.cc/chat/room/ani5vmvdqm"
+      - id: "amlc1bekzi"
+        url: "https://dc.hhhl.cc/chat/room/amlc1bekzi"
+
+development_rules:
+  url: "https://dc.hhhl.cc/settings/connect"
+

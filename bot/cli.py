@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 
+from bot.services.rooms import daily_summary_schedule
 from bot.services.tg_links import service_group_button
 from bot.services.weekly_welfare import evaluate_weekly_welfare
 
@@ -25,6 +26,7 @@ def main() -> int:
     weekly.add_argument("--community-bound", type=parse_bool, required=True)
 
     sub.add_parser("service-group-button", help="Show canonical TG service group button.")
+    sub.add_parser("daily-summary-schedule", help="Show canonical daily community summary schedule.")
 
     args = parser.parse_args()
     if args.command == "weekly-preview":
@@ -35,9 +37,11 @@ def main() -> int:
         button = service_group_button()
         print(json.dumps(button.__dict__, ensure_ascii=False))
         return 0
+    if args.command == "daily-summary-schedule":
+        print(json.dumps(daily_summary_schedule(), ensure_ascii=False))
+        return 0
     return 2
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

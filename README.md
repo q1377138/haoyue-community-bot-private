@@ -7,8 +7,10 @@ This bot is responsible for community-facing automation only. It must not own Su
 ## Scope
 
 - Telegram service group buttons and links.
+- dc.hhhl.cc community room automation.
 - Community binding checks.
 - Weekly welfare notice and eligibility reports.
+- Daily 03:00 community room information collection and summary.
 - Weekly points/ranking announcement helpers.
 - Support auto-replies and community operation helpers.
 
@@ -19,6 +21,10 @@ This bot is responsible for community-facing automation only. It must not own Su
 - Any action that changes user balance, points, coupons, or group binding state requires explicit owner approval.
 - The canonical TG service group label is `TG服务群`.
 - The canonical TG service group URL is `https://t.me/+s485tyl24600YzAx`.
+- Main served community room: `https://dc.hhhl.cc/chat/room/ani5vmvdqm`.
+- Daily summary rooms: `ani5vmvdqm` and `amlc1bekzi`.
+- Development rules page: `https://dc.hhhl.cc/settings/connect`.
+- Production bot host: `ubuntu@43.155.168.147`, project name `haoyue_bot_seoul`, deployed path currently observed as `/opt/haoyue-community-bot`.
 
 ## Local Checks
 
@@ -26,4 +32,3 @@ This bot is responsible for community-facing automation only. It must not own Su
 python -m unittest discover -s tests
 python -m bot.cli weekly-preview --balance 12 --community-bound true
 ```
-
