@@ -19,7 +19,7 @@ This bot is responsible for community-facing automation only. It must not own Su
 - No real bot token, production database password, SSH key, or user export may be committed.
 - Welfare payout actions must be generated as reviewable plans first.
 - Any action that changes user balance, points, coupons, or group binding state requires explicit owner approval.
-- The canonical TG service group label is `TG服务群`.
+- The canonical service group label is `社区服务群`.
 - The canonical TG service group URL is `https://t.me/+s485tyl24600YzAx`.
 - Main served community room: `https://dc.hhhl.cc/chat/room/ani5vmvdqm`.
 - Daily summary rooms: `ani5vmvdqm` and `amlc1bekzi`.

@@ -1,7 +1,7 @@
 # Example only. Copy to a server-local config path and fill real values there.
 telegram:
   bot_token_env: "HAOYUE_TG_BOT_TOKEN"
-  service_group_label: "TG服务群"
+  service_group_label: "社区服务群"
   service_group_url: "https://t.me/+s485tyl24600YzAx"
 
 weekly_welfare:
@@ -14,4 +14,3 @@ weekly_welfare:
 safety:
   dry_run_default: true
   require_owner_approval_for_balance_changes: true
-

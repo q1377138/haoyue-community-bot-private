@@ -18,6 +18,5 @@
 
 ## Canonical Labels
 
-- Use `TG服务群`, not `社区服务群`.
+- Use `社区服务群`, not `TG服务群`.
 - URL: `https://t.me/+s485tyl24600YzAx`
-

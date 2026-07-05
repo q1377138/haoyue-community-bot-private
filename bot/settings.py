@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-TG_SERVICE_GROUP_LABEL = "TG服务群"
+TG_SERVICE_GROUP_LABEL = "社区服务群"
 TG_SERVICE_GROUP_URL = "https://t.me/+s485tyl24600YzAx"
 
 BOT_DEVELOPMENT_RULES_URL = "https://dc.hhhl.cc/settings/connect"
