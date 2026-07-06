@@ -80,3 +80,11 @@ Production multi-room hotfix on 2026-07-06:
 - Replies are sent back to the triggering message's `toRoomId`, not always the default room.
 - Headquarters room still blocks normal automatic replies; it only handles owner mentions or support reply threads.
 - Owner mention detection checks both literal `@q13771388` text and `mentionedUserIds` containing the bot account id.
+
+Production intent-guard hotfix on 2026-07-06:
+
+- Backup: `/opt/haoyue-community-bot/src/bot.mjs.bak-owner-intent-*`.
+- `@q13771388` no longer sends every two-character message to RAG.
+- Only service-support questions such as API Key, recharge, model, group, integration, latency, or error codes query RAG.
+- Casual/game mentions such as `变身奥特曼` or `签到` receive short natural replies instead of fake troubleshooting cards.
+- RAG no-hit replies must say that no reliable answer was found; they must not invent entry/model/report-time suggestions for unrelated chat.

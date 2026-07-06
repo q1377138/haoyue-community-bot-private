@@ -1,6 +1,11 @@
 import unittest
 
-from bot.services.mention_reply import owner_mention_question, owner_mention_reply, owner_mention_requires_knowledge
+from bot.services.mention_reply import (
+    owner_mention_is_casual,
+    owner_mention_question,
+    owner_mention_reply,
+    owner_mention_requires_knowledge,
+)
 
 
 class MentionReplyTests(unittest.TestCase):
@@ -20,6 +25,16 @@ class MentionReplyTests(unittest.TestCase):
 
     def test_empty_mention_does_not_require_knowledge(self):
         self.assertFalse(owner_mention_requires_knowledge("@q13771388"))
+
+    def test_casual_mention_does_not_require_knowledge(self):
+        text = "@q13771388 变身奥特曼"
+        self.assertFalse(owner_mention_requires_knowledge(text))
+        self.assertTrue(owner_mention_is_casual(text))
+
+    def test_game_mention_does_not_require_knowledge(self):
+        text = "@q13771388 签到"
+        self.assertFalse(owner_mention_requires_knowledge(text))
+        self.assertTrue(owner_mention_is_casual(text))
 
 
 if __name__ == "__main__":
