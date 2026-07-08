@@ -14,8 +14,8 @@ Recommended local report names:
 
 - `reports/community-room-ani5vmvdqm-YYYY-MM-DD.json`
 - `reports/community-room-amlc1bekzi-YYYY-MM-DD.json`
-- `reports/community-learn-YYYY-MM-DD.md`
-- `reports/community-learn-YYYY-MM-DD.json`
+- `reports/community-summary-YYYY-MM-DD.md`
+- `reports/community-summary-YYYY-MM-DD.json`
 
 ## Review Categories
 
@@ -24,10 +24,11 @@ Recommended local report names:
 - `billing_or_recharge`
 - `model_or_api_feedback`
 - `community_operation`
-- `rag_candidate`
+- `sales_lead`
 - `ignore`
 
-## RAG Boundary
+## Privacy Boundary
 
-Only reviewed and redacted knowledge may be synced to RAG. Raw room messages stay on the production bot server and must not be committed.
+Raw room messages stay on the production bot server and must not be committed.
 
+Do not sync raw community messages, user prompts, model responses, or private content to a knowledge index unless the owner explicitly restores that project and approves a review workflow.

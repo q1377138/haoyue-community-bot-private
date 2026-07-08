@@ -1,27 +1,25 @@
 knowledge:
-  mode: "local_mirror"
-  local_dir: "docs/knowledge"
-  public_only: true
-  triggers:
+  enabled: false
+  reason: "Central knowledge/RAG server was deleted on 2026-07-09."
+  user_facing_terms_forbidden:
     - "知识库"
-    - "帮助中心"
-    - "查教程"
-    - "查FAQ"
-    - "查报错"
+    - "检索"
+    - "RAG"
+    - "命中文档"
+    - "score"
 
 central_rag:
-  host: "216.195.211.69"
-  local_url_on_rag_server: "http://127.0.0.1:18080"
-  bot_tunnel_url: "http://127.0.0.1:18080"
-  tunnel_service: "haoyue-rag-tunnel.service"
-  public_network_access: false
-  note: "Central RAG is reached from the community bot through SSH tunnel, not public port exposure."
+  enabled: false
+  old_host: "216.195.211.69"
+  old_bot_tunnel_url: "http://127.0.0.1:18080"
+  old_tunnel_service: "haoyue-rag-tunnel.service"
+  note: "Do not reconnect unless the owner explicitly restores the knowledge server."
 
-daily_learning:
+daily_summary:
   schedule: "0 3 * * *"
   timezone: "Asia/Shanghai"
   rooms:
     - "ani5vmvdqm"
     - "amlc1bekzi"
   output:
-    summary_md: "docs/knowledge/09-community-learn-summary.md"
+    local_reports_dir: "reports/"

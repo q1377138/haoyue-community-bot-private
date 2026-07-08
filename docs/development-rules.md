@@ -25,11 +25,10 @@ The summary should distinguish:
 - stability or payment feedback
 - useful product ideas
 - support issues requiring follow-up
-- candidate knowledge that may be sent to RAG after review
+- sales leads or operation notes for manual review
 
 ## Safety
 
 - Do not publish summaries to users automatically before the owner approves the format.
 - Do not store private raw conversations in GitHub.
-- If summaries are later synced to RAG, sync only redacted/generalized knowledge.
-
+- Do not sync summaries to RAG or any knowledge index while the knowledge project is cancelled.
