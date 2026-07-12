@@ -31,6 +31,8 @@ As of 2026-07-09:
 
 Do not overwrite production files from this repository until the existing Node bot source has been safely imported or a migration plan is approved.
 
+The hash-pinned interim migration plan for disabling all games is documented in `docs/minimal-community-mode.md`. It still requires owner approval and Claude read-only review before production execution.
+
 Before any production edit:
 
 1. Back up the target file on the server.

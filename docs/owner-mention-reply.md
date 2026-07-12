@@ -1,5 +1,7 @@
 # Owner Mention Reply
 
+> Disabled by minimal community mode on 2026-07-12. Owner mentions and support follow-up replies are ignored unless the message itself is a community-binding or base-weekly-welfare command.
+
 ## Rule
 
 Both community rooms support owner mention replies.

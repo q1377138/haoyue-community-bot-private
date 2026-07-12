@@ -2,32 +2,33 @@
 
 ## The Bot May Do
 
-- Send TG/community service group links.
-- Reply with the fixed owner-mention service phrase when a message contains `@q13771388`.
-- Reply to `@q13771388` service questions using fixed/local support wording.
-- Keep automatic game, welfare, menu, and service keyword replies in `ani5vmvdqm`.
-- Generate weekly welfare eligibility previews.
-- Generate ranking announcement drafts.
+- Reply to community-binding commands: `绑定`, `绑定状态`, `我的绑定`, and `我的权益`.
+- Reply to base-weekly-welfare commands: `周福利`, `福利规则`, and `余额福利`.
 - Check binding status from approved read-only sources.
-- Produce payout plans for owner review.
+- Generate read-only base weekly welfare eligibility previews.
+- Mark a reviewed base payout plan only after the owner approves the real balance change.
 
-## The Bot Must Not Do Without Approval
+## Base Weekly Welfare
 
-- Change user balance.
-- Clear points or lottery coupons.
-- Change user group, model access, key permissions, or upstream routing.
-- Modify Sub2API production configuration.
-- Send bulk messages to users.
-- Reconnect central RAG or knowledge-base services.
-- Ingest raw prompt/response or private group messages into any knowledge index.
+- Community binding must be effective.
+- Live Sub2API balance must be strictly greater than `10` at settlement time.
+- Reward is exactly `2` balance once per eligible user per week.
+- Every payout requires a backup, a transaction, and balance-ledger verification.
 
-## Canonical Labels
+## Disabled Behavior
 
-- Use `社区服务群`, not `TG服务群`.
-- URL: `https://t.me/+s485tyl24600YzAx`
+- Sign-in and streaks.
+- Points, weekly points, rankings, and rank rewards.
+- Lottery tickets, draws, blind boxes, wheels, and lucky bags.
+- Cultivation, PvP, world boss, starship, market, and all other games.
+- Menus, support-keyword replies, owner-mention replies, and unrelated automatic replies.
+- Variable or activity-score-based payout plans.
 
-## Room Reply Boundary
+Legacy game data remains stored for audit and rollback purposes, but no command may read, mutate, award, spend, rank, or clear it.
 
-- 皓悦中转站群 `ani5vmvdqm`: keep automatic game/welfare/menu/service replies.
-- 总群 `amlc1bekzi`: no automatic replies except explicit `@q13771388` or support reply thread.
-- Both rooms: `@q13771388` with a question uses fixed/local support answers only.
+## Production Safety
+
+- Do not change balances, points, coupons, or binding state without explicit owner approval.
+- Do not reconnect RAG or knowledge-base services.
+- Do not ingest private messages into a knowledge index.
+- Back up the deployed source and state before every production edit.
